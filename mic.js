@@ -1,5 +1,4 @@
 let mic = {
-    active: false,
     boot(){
         let css = 'ul.genericmilk-mic {position: absolute;padding: 0;background: white;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);border-radius: 10px;margin: 0;list-style: none;opacity: 1;margin-top: 0px;transition: opacity .1s ease-in-out, margin-top .1s ease-in-out;outline: none;white-space: nowrap;} ';
         css += 'ul.genericmilk-mic li {min-width: 200px;} ';
@@ -28,10 +27,7 @@ let mic = {
     
         document.body.appendChild(pullDown);
 
-
-        // on pullDown blur remove all li's
         document.querySelector('ul.genericmilk-mic').addEventListener('blur', function(e) {
-            console.log('blur');
             let pullDown = document.querySelector('ul.genericmilk-mic');
             pullDown.innerHTML = '';
         });
