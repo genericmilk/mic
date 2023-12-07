@@ -24,6 +24,8 @@ let mic = {
         // create an empty ul.mic-ele in the body (no jquery)
         let pullDown = document.createElement('ul');
         pullDown.classList.add('genericmilk-mic');
+        pullDown.setAttribute('tabindex', '-1');
+    
         document.body.appendChild(pullDown);
 
 
