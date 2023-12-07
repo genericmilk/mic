@@ -41,15 +41,18 @@ let mic = {
             item.removeEventListener('click', item.onclick);
         });
 
-        // set pull down's inner html to empty
         pullDown.innerHTML = '';
-        console.log(pkg);
-        // add each item to the pull down
+        
         pkg.forEach((value) => {            
             let className = value.class ? value.class : '';
-
+            
             let item = document.createElement('li');
-            item.classList.add(className);
+            
+            // if value.class is not defined, skip this
+            if (className) {
+                item.classList.add(className);
+            }
+
             item.setAttribute('data-rand', Math.random() * 1000);
             item.innerHTML = '<a>' + value.name + '</a>';
 
@@ -64,25 +67,22 @@ let mic = {
             pullDown.appendChild(item);
         });
 
-        // set position on screen
-        let pos = e.getBoundingClientRect();
-        let x = pos.left + e.offsetWidth;
-        let y = pos.top + e.offsetHeight;
+        let ele = e.target;
 
-        // Get screen dimensions
+        let pos = ele.getBoundingClientRect();
+        let x = pos.left;
+        let y = pos.top + ele.offsetHeight;
+
         let sw = window.innerWidth;
         let sh = window.innerHeight;
 
-        // Get pullDown dimensions
         let pw = pullDown.offsetWidth;
         let ph = pullDown.offsetHeight;
 
-        // If pullDown is off the right side of the screen (even partially), move it left
         if (x + pw + (10 * 2) > sw) {
             x -= pw;
         }
 
-        // If pullDown is off the bottom of the screen (even partially), move it up
         if (y + ph + (10 * 2) > sh) {
             y -= ph;
         }

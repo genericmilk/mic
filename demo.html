@@ -16,6 +16,12 @@
         document.querySelector('button').onclick = function(e) {
             mic.drop(e,[
                 {
+                    name: 'Account settings',
+                    run: function(){
+                        alert('Handle here');
+                    }
+                },
+                {
                     name: 'Log out',
                     class: 'red',
                     run: function(){
