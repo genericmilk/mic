@@ -26,8 +26,11 @@ let mic = {
         pullDown.classList.add('genericmilk-mic');
         document.body.appendChild(pullDown);
 
+
         // on pullDown blur remove all li's
-        pullDown.addEventListener('blur', function(e) {
+        document.querySelector('ul.genericmilk-mic').addEventListener('blur', function(e) {
+            console.log('blur');
+            let pullDown = document.querySelector('ul.genericmilk-mic');
             pullDown.innerHTML = '';
         });
 
