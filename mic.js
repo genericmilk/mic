@@ -1,3 +1,13 @@
+/*
+    Mic v1.0.0
+    (c) 2023 Genericmilk
+    License: MIT
+
+    Mic is a simple, lightweight, and easy to use dropdown menu library.
+    It is designed to be used with vanilla javascript, and is only 2kb minified.
+
+    For more information, visit https://github.com/genericmilk/mic  
+*/
 let mic = {
     boot(){
         let css = 'ul.genericmilk-mic {position: absolute;padding: 0;background: white;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);border-radius: 10px;margin: 0;list-style: none;opacity: 1;margin-top: 0px;transition: opacity .1s ease-in-out, margin-top .1s ease-in-out;outline: none;white-space: nowrap;} ';
